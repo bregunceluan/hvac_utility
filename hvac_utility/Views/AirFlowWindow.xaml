@@ -20,7 +20,6 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock FontWeight="Bold" Text="System Name: " />
                         <TextBlock Text="{Binding Path=SystemName}"/>
-                        <TextBlock Margin="5 0 0 0" Text="mm" />
                         <TextBlock  FontWeight="Bold" Margin="50 0 0 0" Text="Terminal's Air Flow: " />
                         <TextBlock Text="{Binding Path=AirFlowValue}" />
                         <TextBlock Margin="5 0 0 0" Text="mm" />
