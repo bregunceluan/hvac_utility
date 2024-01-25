@@ -1,0 +1,45 @@
+﻿<Window x:Class="hvac_utility.Views.AirFlowWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:hvac_utility.Views"
+        mc:Ignorable="d"
+        Title="AirFlowWindow" Height="400" Width="450"
+        Topmost="True"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.9*" />
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+        <ListBox Margin="20" ItemsSource="{Binding Datas}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock FontWeight="Bold" Text="System Name: " />
+                        <TextBlock Text="{Binding Path=SystemName}"/>
+                        <TextBlock Margin="5 0 0 0" Text="mm" />
+                        <TextBlock  FontWeight="Bold" Margin="50 0 0 0" Text="Terminal's Air Flow: " />
+                        <TextBlock Text="{Binding Path=AirFlowValue}" />
+                        <TextBlock Margin="5 0 0 0" Text="mm" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal">
+            <TextBlock FontSize="25">Total: </TextBlock>
+            <TextBlock Text="{Binding Total}" FontSize="25"></TextBlock>
+            <TextBlock Margin="5 0 0 0" Text="mm" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" VerticalAlignment="Center">
+            <Button 
+            Width="120"
+            Height="30"
+            FontSize="14"
+            Content="Start Selection"
+            Command="{Binding ExecutionClickCommand}"/>
+        </StackPanel>
+    </Grid>
+</Window>
